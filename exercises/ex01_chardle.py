@@ -21,3 +21,4 @@ if len(word) == 5:
         print("No instances of " + letter + " found in " + word)
 else:
     print("Error: Word must contain 5 characters")
+    exit()
