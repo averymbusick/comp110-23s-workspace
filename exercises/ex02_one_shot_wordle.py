@@ -3,19 +3,13 @@
 __author__ = "730313069"
 
 SECRET_WORD: str = "python"
-
 guess_word: str = input(f"What is your { len(SECRET_WORD) }-letter guess? ")
-
 index: int = 0
-
 emoji_string: str = ""
-
 WHITE_BOX: str = "\U00002B1C"
 GREEN_BOX: str = "\U0001F7E9"
 YELLOW_BOX: str = "\U0001F7E8"
-
 character_exists: bool = False
-
 alt_index: int = 0
 
 while len(guess_word) != len(SECRET_WORD): #while loop until correct number of letters guessed
