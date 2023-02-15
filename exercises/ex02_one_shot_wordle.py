@@ -13,7 +13,7 @@ character_exists: bool = False
 alt_index: int = 0
 
 while len(guess_word) != len(SECRET_WORD): #while loop until correct number of letters guessed
-   guess_word: str = input(f"That was not { len(SECRET_WORD) } letters! Try again: ")
+   guess_word = input(f"That was not { len(SECRET_WORD) } letters! Try again: ")
 if guess_word == SECRET_WORD:
         print(int(len(SECRET_WORD)) * GREEN_BOX)
         print("Woo! You got it! ")
