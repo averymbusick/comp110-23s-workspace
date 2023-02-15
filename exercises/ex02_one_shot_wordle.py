@@ -36,5 +36,4 @@ else: # correct letter word that isnt the secret
                                 emoji_string += YELLOW_BOX
                 index += 1 #check 0 indice, then 1, 2, etc. until = len(secret_word)
         print(emoji_string)
-print("Not quite. Play again soon! ")
-exit()    
+print("Not quite. Play again soon! ")   
