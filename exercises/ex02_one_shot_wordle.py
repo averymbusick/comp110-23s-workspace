@@ -1,4 +1,4 @@
-"""EX02: One shot wordle"""
+"""EX02: One shot wordle."""
 __author__ = "730313069"
 
 secret_word: str = "python"
