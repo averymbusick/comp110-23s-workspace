@@ -3,7 +3,7 @@
 __author__ = "730313069"
 
 def contains_char(search_str: str, guess_char: str) -> bool:
-    """Searches for the single character that is target_char within the search_str, returns True if target_char is found at any index of search_str."""
+    """Searches for the single character that is guess_char within the search_str, returns True if guess_char is found at any index of search_str."""
     assert len(guess_char) == 1  # makes sure that target_char is a single character
     index: int = 0
     while index < len(search_str):
