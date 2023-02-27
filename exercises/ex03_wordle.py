@@ -41,7 +41,7 @@ def input_guess(expected_length: int) -> str:
 
 def main() -> None:
     """The entrypoint of the program and main game loop."""
-    SECRET_WORD: str = "codes"
+    SECRET_WORD: str = "avery"
     game_turn: int = 1 
     while game_turn <= 6:  # game turn starts at 1 and increases by 1 with each incorrect guess
         print(f"=== Turn {game_turn}/6 ===")
