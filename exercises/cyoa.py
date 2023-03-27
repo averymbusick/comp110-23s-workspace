@@ -41,9 +41,9 @@ def adoption() -> None:  # custom procedure to choose pet
   if pet_choice == "cat":
     pet_emoji += CAT_EMOJI
   if pet_choice == "turtle":
-    pet_emoji == TURTLE_EMOJI
+    pet_emoji += TURTLE_EMOJI
   if pet_choice == "monkey":
-    pet_emoji == MONKEY_EMOJI
+    pet_emoji += MONKEY_EMOJI
   at_home(pet_name, pet_emoji)
   return None
 
