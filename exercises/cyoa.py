@@ -5,16 +5,16 @@ __author__ = "730313069"
 
 points: int = 0
 
-player_name: str = ""
+player: str = ""
 
 import random
 
 
 def greet() -> None:  # greet player and get their name
-  global player_name
+  global player
   print("Let's play COMPpet! The original COMP 110 pet game. Choose your pet, feed them snacks, and play with them to increase your points! ")
-  player_name = input("First off, What is your name? ")
-  print(f"Nice to meet you {player_name}! Let's go to the adoption center to choose your pet! ")
+  player = input("First off, What is your name? ")
+  print(f"Nice to meet you {player}! Let's go to the adoption center to choose your pet! ")
   return None
 
 
@@ -23,18 +23,19 @@ CAT_EMOJI: str = "\U0001F431"
 TURTLE_EMOJI: str = "\U0001F422"
 MONKEY_EMOJI: str = "\U0001F412"
 def adoption() -> None:  # custom procedure to choose pet
-  global player_name
-  print(f"Welcome to the adoption center, {player_name}. It is time to choose your pet. Below are the animals available for adoption! Choose your forever friend wisely.")
+  global player
+  print("================= \U0001F415 Adoption Center \U0001F408 =====================")
+  print(f"Welcome to the adoption center, {player}. It is time to choose your pet. Below are the animals available for adoption! Choose your forever friend wisely.")
   print(f"Dog- {DOG_EMOJI}   Cat- {CAT_EMOJI}   Turtle- {TURTLE_EMOJI}   Monkey- {MONKEY_EMOJI} ")
   pet_choice: str = input("Which pet would you like to adopt? Choose dog, cat, turtle, or monkey. ")
   while pet_choice != "dog" and pet_choice != "cat" and pet_choice != "turtle" and pet_choice != "monkey":
     pet_choice = input("I'm sorry! We do not have that pet at our adoption center. Please choose between dog, cat, turtle, or monkey. ")
-  else:
-    pet_name: str = input(f"Wonderful choice, {player_name}! What would you like to name your new {pet_choice}? ")
+  else:  # correctly chose an animal from the list
+    pet_name: str = input(f"Wonderful choice, {player}! What would you like to name your new {pet_choice}? ")
     print(f"Cute! Lets take {pet_name} home. You earned 10 points and your pet's happiness increased by 5!")
     global points
     points += 10
-  pet_emoji: str = ""
+  pet_emoji: str = ""  # attaching the emoji to the pet
   if pet_choice == "dog":
     pet_emoji += DOG_EMOJI
   if pet_choice == "cat":
@@ -47,10 +48,10 @@ def adoption() -> None:  # custom procedure to choose pet
   return None
 
 
-def at_home(pet_name: str, pet_emoji: str) -> None:
+def at_home(pet_name: str, pet_emoji: str) -> None:  # function for feeding and walking pet
   global points
   print("====================== At Home \U0001F3E0 ==============================")
-  print(f"Welcome home, {player_name} and {pet_name}. At home you can feed your pet and play games to increase their happiness points")
+  print(f"Welcome home, {player} and {pet_name}. At home you can feed your pet and play games to increase their happiness points")
   happiness_points: int = 5
   print(f"This is {pet_name}'s current happiness points: {pet_emoji} {happiness_points} ")
   print("In order to feed your pet snacks and increase their happiness, you can pay 1 point.")
@@ -76,18 +77,18 @@ def at_home(pet_name: str, pet_emoji: str) -> None:
   return None
   
 
-def play_function(points) -> int:
+def play_function(points) -> int:  # mini game to earn points, guess randomly from list given
   """Play games with your pet in order to earn more points."""
-  global player_name
-  print("=============Mini Game=================")
-  print(f"Hey {player_name}, Let's play a game to earn adventure points!")
+  global player
+  print("======================= \U0001F43E Mini Game \U0001F43E =========================")
+  print(f"Hey {player}, Let's play a game to earn adventure points!")
   print(f"In this mini-game, you will try to guess what toy your pet wants; ball, plushie, or bone.")
   print(f"If you correctly guess what toy your pet wants, you will earn 5 adventure points.")
   toys: list[str] = ['ball', 'plushie', 'toy']
   random_toy: str = random.choice(toys)
-  guess: str = input(f"Okay, {player_name}, Make your choice: ")
+  guess: str = input(f"Okay, {player}, Make your choice: ")
   if guess == random_toy:
-    print(f"Nice work, {player_name}, You guessed right! ")
+    print(f"Nice work, {player}, You guessed right! ")
     points += 5
   else:
     print("I'm sorry that is not correct! Come back for another mini game soon.")
@@ -95,10 +96,10 @@ def play_function(points) -> int:
   return points
 
 
-def main() -> None:
-  greet()
-  adoption()
-  print("Do you want to continue playing? ")
+def main() -> None:  # main function
+  greet()  # get players name
+  adoption()  # go straight to adopt a pet
+  print("Do you want to continue playing? ")  # adopt another pet or play  mini game to earn points
   choice: str = input("Press 'y' to continue, or any other key to quit. ")
   while choice == "y":
     adventure_choice: str = input("Press 'a' to go back to the adoption center, or 'b' to play a mini game! ")
@@ -107,8 +108,9 @@ def main() -> None:
     else:
       global points
       points = play_function(points)
+    choice = input("Would you like to continue plying? (y/n): ")
   else:   
-    print(f"Goodbye {player_name}, You earned {points} adventure points. ")
+    print(f"Goodbye {player}, You earned {points} adventure points. ")
   return None
 
 
