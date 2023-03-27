@@ -1,4 +1,4 @@
-"""EX05- Choose Your Own Adventure!"""
+"""EX05- Choose Your Own Adventure! COMPpet adoption and game. """
 
 __author__ = "730313069"
 
