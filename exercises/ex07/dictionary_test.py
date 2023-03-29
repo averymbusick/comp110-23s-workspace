@@ -19,8 +19,8 @@ def test_double_key() -> None:
 
 
 def test_empty_dict() -> None:
-   """Edge case for inverting an empty dictionary."""
-   assert invert({}) == {}
+    """Edge case for inverting an empty dictionary."""
+    assert invert({}) == {}
 
 
 def test_clear_winner() -> None:
